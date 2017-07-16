@@ -1,7 +1,5 @@
-// one class needs to have a main() method
 public class SimpleFactory
 {
-  // arguments are passed using the text field below this editor
   public static void main(String[] args)
   {
     Fruit f1 = FruitFactory.getFruit(0);
