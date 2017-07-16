@@ -1,7 +1,5 @@
-// one class needs to have a main() method
 public class Factory
 {
-  // arguments are passed using the text field below this editor
   public static void main(String[] args)
   {
     // TODO: Use reflection and config file to create concrete factory.
