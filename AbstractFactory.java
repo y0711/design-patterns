@@ -7,7 +7,7 @@ interface Button {
 
 class BigButton implements Button {
 	@Override
-	public show() {
+	public void show() {
 		out.println("show big button");
 	}
 }
@@ -67,7 +67,9 @@ class SmallFactory implements Factory {
 public class AbstractFactory {
 
 	public static void main(String[] args) {
-		Factory f = new SmallFactory();
+		// Factory f = new SmallFactory();
+		Factory f = (Factory) XMLUtil.getBean();
+
 		Button b = f.getButton();
 		Text t = f.getText();
 		b.show();
