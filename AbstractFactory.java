@@ -68,7 +68,7 @@ public class AbstractFactory {
 
 	public static void main(String[] args) {
 		// Factory f = new SmallFactory();
-		Factory f = (Factory) XMLUtil.getBean();
+		Factory f = (Factory) XMLUtil.getBean("config.xml");
 
 		Button b = f.getButton();
 		Text t = f.getText();
