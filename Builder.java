@@ -49,7 +49,7 @@ class DevilBuilder extends ActorBuilder {
 public class Builder {
 	public static void main(String[] args) {
 		ActorController ac = new ActorController();
-		ActorBuilder ab = (ActorBuilder)XMLUtil.getBean("config.xml");
+		ActorBuilder ab = (ActorBuilder)XMLUtil.getBean("config2.xml");
 		Actor actor = ac.construct(ab);
 		out.println("Actor face is " + actor.face + ", hair is " + actor.hair);
 	}
