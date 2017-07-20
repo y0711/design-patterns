@@ -8,11 +8,11 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class XMLUtil {
-	public static Object getBean(){
+	public static Object getBean(String fileName){
 		try {
 			DocumentBuilderFactory df = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = df.newDocumentBuilder();
-			Document doc = db.parse(new File("config.xml"));
+			Document doc = db.parse(new File(fileName));
 			
 			NodeList nl = doc.getElementsByTagName("className");
 			Node node = nl.item(0).getFirstChild();
