@@ -8,6 +8,7 @@ class Actor {
 
 abstract class ActorBuilder {
 	protected Actor actor = new Actor();
+
 	public abstract void setFace();
 	public abstract void setHair();
 	public Actor getActor() {
@@ -27,14 +28,8 @@ class HeroBuilder extends ActorBuilder {
 }
 
 class ActorController {
-	public ActorBuilder ab;
-	public void setActorBuilder(ActorBuilder ab) {
-		this.ab = ab;
-	}
-	public Actor construct() {
-		if (ab == null) {
-			return null;
-		}
+	public Actor construct(ActorBuilder ab) {
+		// Assume ab is not null.
 		ab.setFace();
 		ab.setHair();
 		return ab.getActor();
@@ -54,10 +49,8 @@ class DevilBuilder extends ActorBuilder {
 public class Builder {
 	public static void main(String[] args) {
 		ActorController ac = new ActorController();
-		ActorBuilder ab = (ActorBuilder)XMLUtil.getBean("config2.xml");
-		ac.setActorBuilder(ab);
-
-		Actor actor = ac.construct();
+		ActorBuilder ab = (ActorBuilder)XMLUtil.getBean("config.xml");
+		Actor actor = ac.construct(ab);
 		out.println("Actor face is " + actor.face + ", hair is " + actor.hair);
 	}
 }
