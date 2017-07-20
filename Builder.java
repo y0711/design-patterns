@@ -7,7 +7,7 @@ class Actor {
 }
 
 abstract class ActorBuilder {
-	public Actor actor = new Actor();
+	protected Actor actor = new Actor();
 	public abstract void setFace();
 	public abstract void setHair();
 	public Actor getActor() {
