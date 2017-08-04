@@ -13,13 +13,27 @@ public class FlyWeight {
         Chess chess3 = factory.getChess("w");
         Chess chess4 = factory.getChess("w");
         System.out.println(chess3 == chess4);
+
+        chess1.display(new Coordiantes(10, 15));
+        chess2.display(new Coordiantes(14, 22));
+    }
+}
+
+class Coordiantes {
+    int x;
+    int y;
+
+    Coordiantes(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 }
 
 abstract class Chess {
     abstract String getColor();
-    void display() {
-        System.out.println("color is: " + getColor());
+    void display(Coordiantes coordiantes) {
+        System.out.println(
+                "color is: " + getColor() + ", coordiantes is [" + coordiantes.x + ", " + coordiantes.y + "]");
     }
 }
 
